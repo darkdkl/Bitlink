@@ -47,17 +47,16 @@ def main(apikey):
     parser.add_argument('url', help='Введите вашу ссылку')
 
     args = parser.parse_args()
-    url=args.url
-
-    if check_link(url, apikey):
+    
+    if check_link(args.url, apikey):
         print('')
         print('Количество переходов :', return_clicks(
-            url, apikey)['total_clicks'])
+            args.url, apikey)['total_clicks'])
         print('')
 
-    elif make_shorter(url, apikey):
+    elif make_shorter(args.url, apikey):
         print('*'*50)
-        print('Ваша короткая ссылка :', make_shorter(url, apikey))
+        print('Ваша короткая ссылка :', make_shorter(args.url, apikey))
         print('*'*50)
     else:
         print('Введеное значение не является корректной ссылкой')
