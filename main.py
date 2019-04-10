@@ -4,9 +4,6 @@ import argparse
 
 from urllib.parse import urlparse
 from dotenv import load_dotenv
-load_dotenv()
-TOKEN = os.getenv('TOKEN')
-
 
 def make_shorter(url, key):
     key = 'Bearer {}'.format(key)
@@ -40,12 +37,13 @@ def check_link(link, key):
     return response.ok
 
 
-def main(apikey):
-
+def main():
+    load_dotenv()
+    apikey = os.getenv('TOKEN')
     parser = argparse.ArgumentParser(
         description=' Программа для сокращения ссылок')
     parser.add_argument('url', help='Введите вашу ссылку')
-
+    
     args = parser.parse_args()
     
     if check_link(args.url, apikey):
@@ -63,4 +61,4 @@ def main(apikey):
 
 
 if __name__ == "__main__":
-    main(TOKEN)
+    main()
