@@ -21,8 +21,8 @@ https://dev.bitly.com/get_started.html
  **************************************************
  Ваша короткая ссылка : http://bit.ly/2IcGJK9
  *************************************************
-  python3 main.py  http://bit.ly/2IcGJK9
-  Количество переходов : 1
+ python3 main.py  http://bit.ly/2IcGJK9
+ Количество переходов : 1
 ```
 
  
